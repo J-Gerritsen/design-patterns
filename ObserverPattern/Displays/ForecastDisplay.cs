@@ -14,10 +14,13 @@ namespace ObserverPattern.Displays
         private Subject weatherData;
         public ForecastDisplay(Subject weatherData) 
         { 
-            // Set the field and register itself with the weatherdata subject
+            this.weatherData = weatherData;
+            weatherData.RegisterObserver(this);
         }
         public void Update(float temp, float humidity, float pressure)
         {
+            temperature = temp;
+            this.humidity = humidity;
             // Set the correct fields with the relevant parameters
             Display();
         }
@@ -25,6 +28,7 @@ namespace ObserverPattern.Displays
         public void Display()
         {
             // Print a forecast message based on the current temperature and humidity
+            Console.WriteLine("the current temperature is " + temperature + "and the humidity is " + humidity);
         }
     }
 }

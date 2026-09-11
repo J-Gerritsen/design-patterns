@@ -8,6 +8,11 @@ namespace ObserverPattern
         {
             WeatherData weatherData = new WeatherData();
 
+            CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
+            ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+            StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+
+
             // Create instances of displays 
 
             weatherData.SetMeasurements(28, 65, 30.4f);
