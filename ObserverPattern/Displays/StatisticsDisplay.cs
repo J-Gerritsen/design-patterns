@@ -19,7 +19,6 @@ namespace ObserverPattern.Displays
         { 
             this.weatherData = weatherData;
             weatherData.RegisterObserver(this);
-            // Set the field and register itself with the weatherdata subject
         }
         public void Update(float temp, float humidity, float pressure)
         {
@@ -44,7 +43,6 @@ namespace ObserverPattern.Displays
                     minTemp = temperature;
                 }
             }
-                // Set the correct fields with the relevant parameters
                 Display();
         }
 
@@ -52,7 +50,6 @@ namespace ObserverPattern.Displays
         {
             float average = sumTemperature / countUpdated;
             Console.WriteLine("The average temperature is " + average + " and the maximum temperature is " + maxTemp + ". the minimal temperature is: " + minTemp);
-            // Print the average, maximum and minimum temperature. Use appropriate fields
         }
     }
 }

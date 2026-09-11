@@ -16,14 +16,11 @@ namespace ObserverPattern.Displays
         { 
           this.weatherData = weatherData;
           weatherData.RegisterObserver(this);
-            // Set the field and register itself with the weatherdata subject
         }
         public void Update(float temp, float humidity, float pressure)
         {
             temperature = temp;
             this.humidity = humidity;
-
-            // Set the correct fields with the relevant parameters
             Display();
         }
 

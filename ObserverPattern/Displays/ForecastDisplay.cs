@@ -11,7 +11,7 @@ namespace ObserverPattern.Displays
     {
         private float temperature;
         private float humidity;
-        private Subject weatherData;
+        private readonly Subject weatherData;
         public ForecastDisplay(Subject weatherData) 
         { 
             this.weatherData = weatherData;
@@ -21,14 +21,23 @@ namespace ObserverPattern.Displays
         {
             temperature = temp;
             this.humidity = humidity;
-            // Set the correct fields with the relevant parameters
             Display();
         }
 
         public void Display()
         {
-            // Print a forecast message based on the current temperature and humidity
-            Console.WriteLine("the current temperature is " + temperature + "and the humidity is " + humidity);
+            if (humidity > 50 && temperature > 40)
+            {
+                Console.WriteLine("Today it is warm " + temperature + " and humid " + humidity + ". Don't go outside");
+            }
+            else if (temperature < 20)
+            {
+                Console.WriteLine("Today it is cold " + temperature + ". Wear a thick jacket.");
+            }
+            else
+            {
+                Console.WriteLine("Today the weather is comfortable and the current temperature is " + temperature + "and the humidity is " + humidity);
+            }
         }
     }
 }
