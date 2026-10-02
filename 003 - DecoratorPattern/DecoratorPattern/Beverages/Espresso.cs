@@ -28,7 +28,7 @@ namespace DecoratorPattern.Beverages
             {
                 return 1.99 + baseBeverage.cost();
             }
-            return 1.99;
+            return 1.99 + GetSizeCost();
         }
     }
 }

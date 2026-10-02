@@ -16,13 +16,6 @@ namespace DecoratorPattern.Condiments
 
         public override double cost()
         {
-            // Ik heb geen zin om dit voor alle te copy pasten geniet ervan.
-            if (baseBeverage.Size == Size.TALL)
-                return 0.10 + baseBeverage.cost();
-
-            if (baseBeverage.Size == Size.GRANDE)
-                return 0.15 + baseBeverage.cost();
-
             return 0.20 + baseBeverage.cost();
         }
 
