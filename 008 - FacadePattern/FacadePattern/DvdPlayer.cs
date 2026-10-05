@@ -16,11 +16,11 @@ namespace FacadePattern
 
         public void On()
         {
-
+            Console.WriteLine("DVD player is on");
         }
         public void Off()
         {
-
+            Console.WriteLine("DVD player is off");
         }
         public void Eject()
         {
@@ -36,7 +36,7 @@ namespace FacadePattern
         }
         public void SetSurroundAudio()
         {
-
+            Console.WriteLine("DVD player is on surround audio");
         }
         public void SetTWoChannelAudio()
         {

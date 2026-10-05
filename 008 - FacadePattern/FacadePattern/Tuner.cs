@@ -16,11 +16,12 @@ namespace FacadePattern
 
         public void On()
         {
-
+            Console.WriteLine("Tuner is on");
         }
 
         public void Off()
         {
+            Console.WriteLine("Tuner is off");
 
         }
 
