@@ -10,7 +10,7 @@ namespace CommandPattern.Classes.Commands
     internal class CeilingFanMediumCommand : Command
     {
         CeilingFan ceilingFan;
-        int prevSpeed;
+        Stack<int> previousSpeeds = new Stack<int>();
         public CeilingFanMediumCommand(CeilingFan ceilingFan)
         {
             this.ceilingFan = ceilingFan;
@@ -18,11 +18,34 @@ namespace CommandPattern.Classes.Commands
 
         public void Execute()
         {
+            previousSpeeds.Push(ceilingFan.GetSpeed());
+            ceilingFan.Medium();
         }
 
         public void Undo()
         {
-           
+            if (previousSpeeds.Count == 0)
+            {
+                return;
+            }
+
+            int previousSpeed = previousSpeeds.Pop();
+
+            switch (previousSpeed)
+            {
+                case 0:
+                    ceilingFan.Off();
+                    break;
+                case 1:
+                    ceilingFan.Low();
+                    break;
+                case 2:
+                    ceilingFan.Medium();
+                    break;
+                case 3:
+                    ceilingFan.High();
+                    break;
+            }
         }
     }
 }
