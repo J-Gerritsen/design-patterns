@@ -1,4 +1,6 @@
-﻿using TemplateMethodPattern.CompareTo;
+﻿using TemplateMethodPattern.Beverage.AbstractedBeverages;
+using TemplateMethodPattern.Beverage.HookedBeverages;
+using TemplateMethodPattern.CompareTo;
 
 namespace TemplateMethodPattern
 {
@@ -6,6 +8,10 @@ namespace TemplateMethodPattern
     {
         static void Main(string[] args)
         {
+            ChocolateMilk chocolateMilk = new ChocolateMilk();
+            chocolateMilk.PrepareRecipe();
+
+
             SimpleTea simpleTea = new SimpleTea();
             SimpleCoffee simpleCoffee = new SimpleCoffee();
 
@@ -21,6 +27,9 @@ namespace TemplateMethodPattern
             coffee.PrepareRecipe();
 
             Console.WriteLine("\n\n Now with hooked classes\n\n");
+
+            SodaWithHook soda = new SodaWithHook();
+            soda.PrepareRecipe();
 
             // You'll need this method for the second part of the Template Method Pattern
             /*Duck[] ducks =
