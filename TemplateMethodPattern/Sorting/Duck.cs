@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TemplateMethodPattern.CompareTo
 {
-    internal class Duck
+    internal class Duck : IComparable<Duck>
     {
         string name;
         int weight;
@@ -20,6 +20,11 @@ namespace TemplateMethodPattern.CompareTo
         public override string ToString()
         {
             return $"{name} weights {weight}";
+        }
+
+        public int CompareTo(Duck other)
+        {
+            return other.weight.CompareTo(weight);
         }
     }
 }
